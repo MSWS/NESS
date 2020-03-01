@@ -1,0 +1,63 @@
+Configuration:
+#How often the banwaves are (seconds)
+  BanWaves: 60
+#How much VL is required to be registered for a banwave
+  VLForBanwave: 150
+#How much VL is required to be instantly banned
+  VLForInstaban: 400
+#Probability that the player will be lagged back
+  LagPossibility: 50
+#Minimum VL required to notify staff
+  MinimumVL: 20
+Settings:
+#Whether or not developer mode is enabled
+#In Developer mode players won't be banned, checks are shown to NESS.notify.developer
+  DeveloperMode: false
+  DebugMode: false
+#Whether to lag-back the player I DON'T RECOMMEND DOING THIS
+  Cancel: false
+#Basically if NESS is enabled at all
+  Global: true
+#Will NESS alert staff members in the server or all servers?
+  ServerOnly: false
+#Are manual bans enabled?
+  ManualBan: true
+#Should NESS handle bans? (Disable if you want to use CommandsOnBan to /ban the player)
+  HandleBans: true
+#Should NESS delete any/all items that have enchantment levels > 100
+  AllowEnchants: false
+#Should NESS automatically check for new updates? (I suggest keeping this enabled)
+CheckForUpdates: true
+Prefix: '&4NESS>&7'
+#Should NESS create extremely detailed logs?
+StoreLogs: true
+#The different levels of severity, more levels = more alerts
+VlCols:
+  - '&a'
+  - '&6'
+  - '&c'
+AutoAnnouncer:
+  Enabled: true
+  Delay: 600 #600 seconds
+  Message: '&4NESS&c Anti-Cheat Protects this server'
+#Placeholders: %duration% %player% %hack% %token% (%vl% only for WarnHacks)
+BanMessage:
+  - '&c&l[NESS Anti-Cheat]'
+  - '&rYou have been banned from this server for %duration%'
+  - 'Token ID: %token%'
+PacketMessage: 'You are sending too many packets'
+CommandsOnBan:
+  - 'say %player% was banned for %hack%!'
+CommandsOnBanwave:
+  - 'say %player% was banwaved for %hack%!'
+Messages:
+  WarnHacks: '%prefix% &e%player% &7suspected of %vlCol%%hack%&7.'
+  IsQueued: '%prefix% &e%player% &7is now queued for a banwave.'
+  NoPermission: '%prefix% You do not have permission to do that.'
+  WasBanned: '%prefix% &e%player% &7was banned by &4NESS&7.'
+#Disable certain checks via number (use Dev mode to see), you can also do 'Flight', 'Kill Aura' (etc)
+DisabledChecks:
+  - '0'
+  - 'exampleHack'
+DisabledWorlds:
+  - 'exampleWorld'
